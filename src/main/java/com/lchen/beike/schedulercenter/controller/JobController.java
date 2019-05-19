@@ -1,5 +1,6 @@
 package com.lchen.beike.schedulercenter.controller;
 
+import com.google.common.collect.Lists;
 import com.lchen.beike.schedulercenter.controller.req.JobReq;
 import com.lchen.beike.schedulercenter.controller.resp.JobResp;
 import org.springframework.web.bind.annotation.*;
@@ -31,7 +32,7 @@ public class JobController {
 
     @GetMapping(value = "/scheduler/jobs")
     public List<JobResp> jobsPaging() {
-        return null;
+        return Lists.newArrayList();
     }
 
 }
