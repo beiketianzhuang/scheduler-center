@@ -5,6 +5,7 @@ import com.lchen.beike.schedulercenter.controller.req.JobReq;
 import com.lchen.beike.schedulercenter.controller.resp.JobResp;
 import org.springframework.web.bind.annotation.*;
 
+import java.time.LocalDateTime;
 import java.util.List;
 
 /**
@@ -32,7 +33,16 @@ public class JobController {
 
     @GetMapping(value = "/scheduler/jobs")
     public List<JobResp> jobsPaging() {
-        return Lists.newArrayList();
+        return Lists.newArrayList(JobResp
+                .builder()
+                .id(1L)
+                .jobName("test")
+                .repeatCount(10)
+                .timeout(100L)
+                .description("测试")
+                .updatedAt(LocalDateTime.now())
+                .updatedAt(LocalDateTime.now())
+                .build());
     }
 
 }

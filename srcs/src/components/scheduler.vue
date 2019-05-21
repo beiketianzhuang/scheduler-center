@@ -9,22 +9,22 @@
                 :data="tableData"
                 style="width: 100%">
             <el-table-column
-                    prop="date"
+                    prop="jobName"
                     label="名称"
                     min-width="25%">
             </el-table-column>
             <el-table-column
-                    prop="name"
+                    prop="repeatCount"
                     label="失败重试次数"
                     min-width="25%">
             </el-table-column>
             <el-table-column
-                    prop="address"
+                    prop="timeout"
                     label="超时时间"
                     min-width="25%">
             </el-table-column>
             <el-table-column
-                    prop="address"
+                    prop="description"
                     label="描述"
                     min-width="25%">
             </el-table-column>
@@ -62,35 +62,27 @@
     </el-card>
     </div>
 </template>
-
 <script>
+    import { mapGetters } from 'vuex';
     export default {
         name: "scheduler",
         data() {
             return {
-                tableData: [{
-                    date: '2016-05-02',
-                    name: '王小虎',
-                    address: '上海市普陀区金沙江路 1518 弄'
-                }, {
-                    date: '2016-05-04',
-                    name: '王小虎',
-                    address: '上海市普陀区金沙江路 1517 弄'
-                }, {
-                    date: '2016-05-01',
-                    name: '王小虎',
-                    address: '上海市普陀区金沙江路 1519 弄'
-                }, {
-                    date: '2016-05-03',
-                    name: '王小虎',
-                    address: '上海市普陀区金沙江路 1516 弄'
-                }]
+                tableData: this.jobInfo
             }
         },
         methods:{
             getJobs() {
                 this.$store.dispatch("getJobs");
             }
+        },
+        created() {
+            this.getJobs();
+        },
+        computed: {
+            ...mapGetters([
+                'jobInfo'
+            ])
         }
     }
 </script>

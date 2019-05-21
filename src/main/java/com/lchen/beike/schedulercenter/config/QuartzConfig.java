@@ -21,7 +21,7 @@ import java.util.Properties;
 @Configuration
 public class QuartzConfig {
 
-    @Bean
+//    @Bean
     public Scheduler schedule() throws  IOException, SchedulerException {
         SchedulerFactory schedulerFactory = new StdSchedulerFactory(quartzProperties());
         Scheduler scheduler = schedulerFactory.getScheduler();
@@ -42,7 +42,7 @@ public class QuartzConfig {
      *
      * @return
      */
-    @Bean
+//    @Bean
     public QuartzInitializerListener quartzInitializerListener() {
         return new QuartzInitializerListener();
     }

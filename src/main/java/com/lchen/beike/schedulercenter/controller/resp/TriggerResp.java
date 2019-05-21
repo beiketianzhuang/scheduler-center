@@ -1,29 +1,19 @@
 package com.lchen.beike.schedulercenter.controller.resp;
 
-import lombok.Builder;
 import lombok.Data;
 
 import java.time.LocalDateTime;
 
 /**
  * @author : lchen
- * @date : 2019/5/16
+ * @date : 2019/5/21
  */
 @Data
-@Builder
-public class JobResp {
+public class TriggerResp {
 
     private Long id;
-
-    private String jobName;
-    //失败重试次数
-    private Integer repeatCount;
-    //超时时间
-    private Long timeout;
-
-    private String description;
-
+    private Long jobId;
+    private String cron;
     private LocalDateTime createdAt;
-
     private LocalDateTime updatedAt;
 }

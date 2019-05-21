@@ -7,7 +7,7 @@ const actions = {
     getJobs({commit}){
         axios.get("/scheduler/jobs",{withCredentials:false}).then(data=>{
             let res=data.data;
-            console.log(res);
+            // console.log(res);
             commit("saveJob",res)
         })
     }
