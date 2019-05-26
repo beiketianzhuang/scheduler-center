@@ -9,9 +9,9 @@
         <relativePath/> <!-- lookup parent from repository -->
     </parent>
     <groupId>com.lchen.beike</groupId>
-    <artifactId>scheduler-center</artifactId>
-    <version>0.0.1-SNAPSHOT</version>
-    <name>scheduler-center</name>
+    <artifactId>scheduler</artifactId>
+    <version>1</version>
+    <name>scheduler</name>
     <description>Demo project for Spring Boot</description>
 
     <properties>
